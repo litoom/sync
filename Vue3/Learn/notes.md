@@ -32,3 +32,14 @@ v-bind
 
 v-bind动态绑定class
   对象语法
+
+v-if和v-show
+  v-if 为false，不渲染
+  v-show 为false，渲染但不显示 display：none ，不能和v-else一起使用，且不支持template
+
+v-for 遍历数组 对象 数字
+    key的作用：
+      VNode:Virtual Node 虚拟节点
+      虚拟DOM：多个VNode组成虚拟DOM
+
+    mount:挂载 div->真实DOM
