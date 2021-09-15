@@ -65,3 +65,32 @@ watch监听器
 深拷贝：
   JSON.parse(JSON.stringify(info));
   Lodash
+
+v-model
+    可以绑定input textarea checkbox 多选框
+
+webpack5 vite
+  webpack依赖：node npm
+  npm install webpack webpack-cli -g
+   5.37.1   4.7.0
+   一般不用全局的webpack
+
+  package.json
+    npm init 创建package.json文件
+    npm install webpack webpack-cli 局部安装
+        开发阶段：  --save-dev  简写-D
+        生产阶段：  
+   package-lock.json：
+    记录真正的安装的版本号
+  node_modules:
+    安装webpack所依赖安装的包
+
+  局部打包命令：
+    ./node_moudles/.bin/webpack
+    npx webpack
+    或者在package.json的脚本中创建build命令 "build":"webpack"
+        npm run build
+      默认在当前所在目录下面的src里面的index.js开始打包
+
+  指定入口和出口
+    npx webpack --entry ./src/main.js --output-path ./build
