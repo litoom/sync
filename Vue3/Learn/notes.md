@@ -86,11 +86,39 @@ webpack5 vite
     安装webpack所依赖安装的包
 
   局部打包命令：
-    ./node_moudles/.bin/webpack
-    npx webpack
-    或者在package.json的脚本中创建build命令 "build":"webpack"
+    方法一：./node_moudles/.bin/webpack
+    方法二：npx webpack
+    方法三：或者在package.json的脚本中创建build命令 "build":"webpack"
         npm run build
       默认在当前所在目录下面的src里面的index.js开始打包
 
   指定入口和出口
     npx webpack --entry ./src/main.js --output-path ./build
+
+  webpack.config.js
+     webpack配置文件，设置打包入口和出口
+
+  npm install 新项目安装依赖
+
+  css-loader
+    npm install css-loader -D
+    loader配置 在webpack.config.js中配置
+  style-loader
+    npm install style-loader -D
+    loader配置 在webpack.config.js中配置
+  less sass
+    npm install less -D 这个和webpack无关，本生就是个less->css 的工具
+    npm install less-loader -D
+    在webpack.config.js配置
+  PostCSS
+    autoprefixer插件
+    postcss-preset-env插件 内置了autoprefixer
+
+  file-loader
+  url-loader 打包较小的文件，转成base64的uri
+
+
+  npx 是在node_modules、bin里面找某个命令的
+
+  asset module type
+    
