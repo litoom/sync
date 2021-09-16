@@ -122,3 +122,4 @@ webpack5 vite
 
   asset module type
     
+  npm --registry https://registry.npm.taobao.org install [依赖的名称]

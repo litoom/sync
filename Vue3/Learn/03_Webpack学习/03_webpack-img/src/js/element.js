@@ -7,6 +7,8 @@ import "../css/image.css";
 
 import zqImg from "../img/2.png";
 
+import "../font/iconfont.css"
+
 const divEl = document.createElement("div");
 divEl.className = "title";
 divEl.innerHTML = "xxxxx";
@@ -20,6 +22,12 @@ const imgEl = document.createElement("img");
 // imgEl.src = "../img/zq.jpeg";
 imgEl.src = zqImg;
 
+// font设置
+const iEl = document.createElement("i");
+iEl.className = "iconfont icon-aichegujiabeifen";
+
+
 document.body.appendChild(divEl);
 document.body.appendChild(bgDivEl);
 document.body.appendChild(imgEl);
+document.body.appendChild(iEl);

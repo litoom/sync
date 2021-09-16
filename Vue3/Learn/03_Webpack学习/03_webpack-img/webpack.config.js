@@ -41,39 +41,60 @@ module.exports = {
       use: ["style-loader", "css-loader", "less-loader"]
     },
     // 奇怪奇怪真奇怪
-    {
-      test: /\.(jpg|gif|svg|jpeg|png)$/,
-      use: {
-        // loader: "file-loader",
-        loader: "url-loader",
-        options: {
-          //outputPath:"img",//可省略写到下面
-          name: "img/[name]_[hash:6].[ext]",
-          // webpack5以上，允许使用资源文件，无需配置额外的loader，
-          // webpack5本身已经内置了asset资源模块来处理
-          // 解决办法：将asset的模块类型设置为type: 'javascript/auto'
+    // {
+    //   test: /\.(jpg|gif|svg|jpeg|png)$/,
+    //   use: {
+    //     // loader: "file-loader",
+    //     loader: "url-loader",
+    //     options: {
+    //       //outputPath:"img",//可省略写到下面
+    //       name: "img/[name]_[hash:6].[ext]",
+    //       // webpack5以上，允许使用资源文件，无需配置额外的loader，
+    //       // webpack5本身已经内置了asset资源模块来处理
+    //       // 解决办法：将asset的模块类型设置为type: 'javascript/auto'
 
-          // 关闭es6语法规范
-          esModule: false,
-          // limit是url-loader的option
-          limit: 1000 * 1024
-        }
+    //       // 关闭es6语法规范
+    //       esModule: false,
+    //       // limit是url-loader的option
+    //       limit: 1000 * 1024
+    //     }
+    //   },
+    //   type: 'javascript/auto'
+    // },
+    //在webpack5，不需要上述的url-loader fail-loader
+    {
+      test: /\.png$/,
+      type: "asset",
+      generator: {
+        filename: "img/[name]_[hash:6][ext]"
       },
-      type: 'javascript/auto'
+      parser: {
+        dataUrlCondition: {
+          maxSize: 1000 * 1024
+        }
+      }
     },
-      //在webpack5，不需要上述的url-loader fail-loader
-      // {
-      //  test: /\.png$/,
-      //  type:"asset",
-      // generator:{
-      //   filename:"img/[name]_[hash:6][ext]"
-      // }
-      //  parser:{
-      //    dataUrlCondition:{
-      //      maxSize: 1000 * 1024
-      //  }
-      //  }
-      // }
+    //  // 字体的loader方法一
+    // {
+    //   test: /\.(eot|ttf|ttft|woff2?)$/,
+    //   use: {
+    //     loader: "file-loader",
+    //     options: {
+    //       outputPath: "font",
+    //       name: "[name]_[hash:6].[ext]",
+    //       esModule: false,
+    //     }
+    //   },
+    //   type: 'javascript/auto'
+    // }
+    {
+      // 方法二 webpack5
+      test: /\.(eot|ttf|ttft|woff2?)$/,
+      type: "asset/resource",
+      generator:{
+        filename:"font/[name]_[hash:6][ext]"
+      }
+    }
     ]
   }
 }
