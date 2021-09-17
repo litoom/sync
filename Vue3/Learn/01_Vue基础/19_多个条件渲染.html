@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+      <!-- v-model双向绑定 -->
+      <input type="text" v-model="score">
+        <div v-if="score >= 90">
+            优秀
+        </div>
+        <div v-else-if="score >= 85">良好</div>
+        <div v-else>不及格</div>
+    </template>
+    <script src="../Learn/js/vue.js"></script>
+    <script>
+
+    const App ={
+        template:"#my-app",
+        data:function(){
+            return {
+                message:"hello,word",
+                score:98,
+            }
+        },
+        methods:{}
+    };
+
+    Vue.createApp(App).mount("#app");
+</script>
+</body>
+</html>

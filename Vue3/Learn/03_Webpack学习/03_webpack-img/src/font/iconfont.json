@@ -1,0 +1,58 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "24341097",
+      "name": "amount double-line",
+      "font_class": "a-amountdouble-line",
+      "unicode": "e9d4",
+      "unicode_decimal": 59860
+    },
+    {
+      "icon_id": "24341098",
+      "name": "android-line",
+      "font_class": "android-line",
+      "unicode": "e9d5",
+      "unicode_decimal": 59861
+    },
+    {
+      "icon_id": "24341099",
+      "name": "android-fill",
+      "font_class": "android-fill",
+      "unicode": "e9d6",
+      "unicode_decimal": 59862
+    },
+    {
+      "icon_id": "24341100",
+      "name": "annal upload-line",
+      "font_class": "a-annalupload-line",
+      "unicode": "e9d7",
+      "unicode_decimal": 59863
+    },
+    {
+      "icon_id": "24341107",
+      "name": "archive catalogue-line",
+      "font_class": "a-archivecatalogue-line",
+      "unicode": "e9d8",
+      "unicode_decimal": 59864
+    },
+    {
+      "icon_id": "24341108",
+      "name": "apple-line",
+      "font_class": "apple-line",
+      "unicode": "e9d9",
+      "unicode_decimal": 59865
+    },
+    {
+      "icon_id": "24341109",
+      "name": "archives-line",
+      "font_class": "archives-line",
+      "unicode": "e9da",
+      "unicode_decimal": 59866
+    }
+  ]
+}

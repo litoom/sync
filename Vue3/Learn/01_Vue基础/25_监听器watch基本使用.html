@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    请输入：<input type="text" v-model="message">
+    <!-- <button @click="queryAnswer">查找</button> -->
+  </template>
+  <script src="../Learn/js/vue.js"></script>
+  <script>
+
+    const App = {
+      template: "#my-app",
+      data() {
+        return {
+          // 监听message的变化事，去进行一些逻辑的处理
+          message: "hello,word"
+        }
+      },
+      methods: {
+        queryAnswer() {
+          console.log(this.message)
+        }
+      },
+      watch: {
+        // message监听的data中的属性的名称
+        message(newValue, oldValue){
+          console.log(newValue,oldValue);
+          this.queryAnswer();
+        }
+      }
+    };
+
+    Vue.createApp(App).mount("#app");
+  </script>
+</body>
+
+</html>

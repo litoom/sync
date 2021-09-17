@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <div>
+      {{message}}
+    </div>
+    <component-a></component-a>
+  </template>
+
+  <template id="component-a">
+    <h2>我是组件A</h2>
+    <p>内容</p>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script>
+
+    const ComponentA = {
+      template: "#component-a",
+    }
+
+    const App = {
+      template: "#my-app",
+      data: function () {
+        return {
+          message: "hello,word"
+        }
+      },
+      methods: {},
+      components: {
+        // 局部组件
+        // ComponentA:ComponentA  es6语法糖省略
+        ComponentA
+      }
+    };
+
+    // Vue.createApp(App).mount("#app");
+    const app = Vue.createApp(App);
+
+    // 全局组件
+    // app.component("ComponentA",ComponentA);
+    app.mount("#app");
+  </script>
+</body>
+
+</html>

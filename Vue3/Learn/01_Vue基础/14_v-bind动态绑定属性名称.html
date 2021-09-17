@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script src="./js/vue.js"></script>
+  <!-- 动态绑定自定义属性名 -->
+  <template id="my-app">
+    <div :[name]="value">xxx</div>
+  </template>
+
+  <script>
+    Vue.createApp({
+      template: `#my-app`,
+      data: function () {
+        return {
+          name:"abc",
+          value:"xxx"
+        }
+      },
+      methods: {},
+    }).mount("#app");
+  </script>
+</body>
+
+</html>
