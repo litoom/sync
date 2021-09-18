@@ -162,4 +162,25 @@ webpack5 vite
 
 
 Vue源码的Webpack的打包
-  
+  .vue文件的loader
+    1.安装  vue-loader@next   
+    2.安装  @vue/compiler-sfc  不需要use设置,vue-loader自动调用这个库
+    3.导入  const {VueLoaderPlugin} = require("vue-loader/dist/index")
+    4.设置plugin  new VueLoaderPlugin()
+
+
+SFC 单文件组件  .vue文件
+
+
+
+dev-server
+  方法一：webpack watch模式
+      package.json配置"build": "webpack --watch"
+  方法二：webpack-dev-server
+      1. npm install webpack-dev-server -D
+      2. package.json"server": "webpack server" 生成build空文件夹
+      3. webpack.config.js devServer:{
+        contentBase更新为static：
+        statci的作用：在开发阶段，public文件里有大量静态资源 如视频文件，如果使用copywebpackplugin，在会浪费大量时间进行拷贝，所以可以设置使用statci
+        在打包阶段，还是需要使用copywebpackplugin，把所有资源进行打包
+   }

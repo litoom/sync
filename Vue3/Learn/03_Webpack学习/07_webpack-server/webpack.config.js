@@ -28,6 +28,19 @@ module.exports = {
     path: path.resolve(__dirname, "./build"),
     filename: "js/bundle.js",
   },
+  devServer: {
+    static: "./abc",
+    // 模块热替换
+    hot: true,
+    // host: "0.0.0.0",
+    // port: 7777,
+    // open: true,
+    //解决跨域问题 devServer本身就是一个express服务器
+    // proxy: {
+    //   "/api": "http://localhost:8888"
+    // }
+  },
+  target: "web",
   module: {
     // module.rules允许配置多个loader
     rules: [{
@@ -176,4 +189,5 @@ module.exports = {
     }),
     new VueLoaderPlugin()
   ]
+
 }

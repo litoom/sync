@@ -3,6 +3,12 @@ const { priceFormat } = require("./js/format");
 
 import "./js/element";
 
+if (module.hot) {
+  module.hot.accept("./js/element.js", () => {
+    console.log("element模块发生更新了，浏览器不刷新");
+  });
+}
+
 console.log(sum(20, 30));
 console.log(priceFormat());
 
@@ -14,14 +20,13 @@ import { createApp } from "vue/dist/vue.esm-bundler";
 
 import App from "./vue/App.vue";
 
-// const app = createApp({
-//   template: "#my-app",
-//   data() {
-//     return {
-//       title: "hello,vue",
-//       message:"xxx"
-//     }
-//   }
-// });
 const app = createApp(App);
 app.mount("#app");
+
+console.log("自动打包...热更新");
+
+console.log("HMR 热替换");
+
+
+import axios from "axios";
+axios.get("");
